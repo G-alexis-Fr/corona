@@ -10,12 +10,12 @@ export const fetchData = async (country) => {
         changeableUrl = `${url}/countries/${country}`
     }
     try{
-        const {data: {confirmed,recovered,deaths,lastUpdate}} = await axios.get(changeableUrl);
+        return await axios.get(changeableUrl);
 
         // if same key and value, we can write this way.
-        const modifiedData = {confirmed, recovered, deaths, lastUpdate}
+        // const modifiedData = {confirmed, recovered, deaths, lastUpdate}
 
-        return modifiedData;
+        // return modifiedData;
     }catch (error){
         console.log(error);
     }
